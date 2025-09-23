@@ -1,5 +1,18 @@
-h1 {
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+header {
+  position: sticky;
+  top: 0px;
+  background-color: rgba(105, 85, 240, 0.507);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  z-index: 10;
+}
+h1 {
   padding: 10px 0px 10px 20px;
   transition: 0.5s ease;
   &::selection {
@@ -7,12 +20,6 @@ h1 {
   }
 }
 
-.hr {
-  background-color: #97a3c5;
-  height: 5px;
-  width: 100%;
-  border-radius: 10px;
-}
 .heading-dec {
   height: 15px;
   width: 15px;
@@ -24,19 +31,23 @@ h1 {
   margin-bottom: 2px;
   transition: 0.5s ease;
 }
+
 h1:hover .heading-dec {
   transform: rotate(90deg);
 }
+
 #container {
-  padding: 20px 30px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
   background-color: rgb(238, 238, 252);
-  margin: 0px 20px;
-  margin-top: 10px;
+  padding-top: 10px;
+  overflow: hidden;
+  padding: 0px 15px;
+  padding-bottom: 20px;
 }
+
 .img-cont {
   height: 20rem;
   width: 15rem;
@@ -44,6 +55,7 @@ h1:hover .heading-dec {
   border-radius: 20px;
   overflow: hidden;
 }
+
 .img {
   height: 100%;
   width: 100%;
@@ -56,6 +68,7 @@ h1:hover .heading-dec {
     transform: scale(1.05);
   }
 }
+
 .btn {
   padding: 15px 25px;
   border-radius: 10px;
@@ -73,10 +86,32 @@ h1:hover .heading-dec {
     background-color: rgba(100, 148, 237, 0.927);
   }
 }
+
 .btn-box {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
   width: 100%;
+}
+
+/* to make container (img-con) responsive */
+@media screen and (max-width: 576px) {
+  .img-cont {
+    height: 9rem;
+    width: 7rem;
+  }
+  #container {
+    padding: 0px 5px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .img-cont {
+    height: 12rem;
+    width: 9rem;
+  }
+  #container {
+    padding: 0px 10px;
+  }
 }
